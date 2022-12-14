@@ -1,6 +1,6 @@
 //Prompt when user clicks the button.
 
-document.getElementById('generate').addEventListener('click', generateOptions); 
+/*document.getElementById('generate').addEventListener('click', generateOptions); */
 
 
 
@@ -19,7 +19,7 @@ let length = (prompt("Enter how many characters you would like your password to 
   let special = confirm("Would you like to include special characters in your password?");
 
   //Loop if user doesn't select any character types.
-  while (!(upperCase || lowerCase || number || special)){
+  while ((!upperCase && !lowerCase && !number && !special)){
     alert("Please select at least one character type.");
     upperCase = confirm("Would you like to include uppercase letters in your password?");
     lowerCase = confirm("Would you like to include lowercase letters in your password?");
@@ -47,7 +47,7 @@ const characters = {
  }
 
  function generatePassword() {
-  let options = getUserOptions();
+let options = generateOptions();
   console.log(options);
   let possibleCharacters = "";
 
